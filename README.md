@@ -1,2 +1,3 @@
 # RunCycleLog-webapp
-RunCycleLog-Your Fittness
+RunCycleLog-Your Fitness Tracker
+
