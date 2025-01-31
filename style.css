@@ -1,0 +1,284 @@
+:root {
+  --color-primary: #ff69b4;  /* Hot pink */
+  --color-primary-dark: #e6007e;  /* Darker pink */
+  --color-secondary: #9b59b6;  /* Purple */
+  --color-text: #2c3e50;
+  --color-text-light: #7f8c8d;
+  --color-bg: #fff5f8;  /* Very light pink background */
+  --color-bg-dark: #ffe4ed;  /* Slightly darker light pink */
+  --gradient: linear-gradient(to right bottom, #ff69b4, #9b59b6);  /* Pink to purple gradient */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-text);
+  height: 100vh;
+  overscroll-behavior-y: none;
+  background-color: var(--color-bg);
+  display: flex;
+}
+
+/* GENERAL */
+a:link,
+a:visited {
+  color: var(--color-brand--1);
+}
+
+/* SIDEBAR */
+.sidebar {
+  flex-basis: 450px;
+  background-color: var(--color-bg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  height: 5.2rem;
+  margin-right: 1rem;
+}
+
+.app-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.workouts {
+  list-style: none;
+  height: 77vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 1rem;
+}
+
+.workouts::-webkit-scrollbar {
+  width: 8px;
+}
+
+.workouts::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+.workouts::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+/* FORM */
+.form {
+  background-color: var(--color-bg-dark);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.form.hidden {
+  transform: translateY(-30px);
+  height: 0;
+  padding: 0;
+  margin-bottom: 0;
+  opacity: 0;
+}
+
+.form__row {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.form__label {
+  flex: 0 0 30%;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.form__input {
+  width: 70%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: white;
+  transition: all 0.2s;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.form__btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--gradient);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.form__btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* WORKOUT */
+.workout {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.workout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.workout--running {
+  border-left: 5px solid var(--color-primary);
+}
+
+.workout--cycling {
+  border-left: 5px solid var(--color-secondary);
+}
+
+.workout__title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.workout__details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.workout__icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.workout__value {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  color: var(--color-text);
+}
+
+.workout__unit {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  text-transform: uppercase;
+}
+
+/* MAP */
+#map {
+  flex: 1;
+  height: 100%;
+  background-color: var(--color-bg);
+}
+
+/* FOOTER */
+.footer {
+  margin-top: auto;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-bg-dark);
+}
+
+.copyright {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.author-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.author-link:hover {
+  color: var(--color-primary-dark);
+}
+
+/* RESET BUTTON */
+.reset-button {
+  margin: 1rem;
+  padding: 0.8rem;
+  background: var(--gradient);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+  opacity: 0.9;
+  display: block;
+  width: calc(100% - 2rem);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reset-button:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.reset-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* POPUP */
+.leaflet-popup .leaflet-popup-content-wrapper {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1rem;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.leaflet-popup .leaflet-popup-content {
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+  margin: 0.5rem;
+}
+
+.leaflet-popup .leaflet-popup-tip {
+  background-color: white;
+}
+
+.running-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--color-primary);
+}
+
+.cycling-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--color-secondary);
+}
